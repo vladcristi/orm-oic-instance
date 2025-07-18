@@ -49,10 +49,4 @@ resource "oci_integration_integration_instance" "test_integration_instance" {
   is_byol                   = "false"
   message_packs             = "1"
   domain_id                 = var.domain_id
-
-  lifecycle {
-    ignore_changes = [
-      system_tags,
-    ]
-  }
 }
