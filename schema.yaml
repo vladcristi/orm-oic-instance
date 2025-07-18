@@ -1,0 +1,67 @@
+## Copyright © 2024, Oracle and/or its affiliates. 
+## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
+
+title: "Deploy OIC Instance"
+stackDescription: "Stack to deploy Oracle Integration Instance"
+schemaVersion: 1.1.0
+version: "20190404"
+locale: "en"
+
+
+variableGroups:
+- title: Required Configuration
+  visible: true  
+  variables:
+  - tenancy_ocid
+  - user_ocid
+  - fingerprint
+  - private_key_path
+  - region
+  - compartment_id
+  - instance_type
+  - domain_id
+
+variables:
+  tenancy_ocid:
+    type: string
+    title: "Tenancy OCID"
+    required: true
+    visible: true
+  user_ocid:
+    type: string
+    title: "User OCID"
+    required: true
+    visible: true
+  fingerprint:
+    type: string
+    title: "Fingerprint"
+    required: true
+    visible: true
+  private_key_path:
+    type: string
+    title: "Private Key Path"
+    description: "Path to Private Key"
+    required: true
+    visible: true
+  region:
+    type: string
+    title: "Region"
+    required: true
+    visible: true
+  compartment_id:
+    type: oci:identity:compartment:id
+    required: true
+    visible: true
+    title: "Compartment"
+    description: "Choose compartment where you want to deploy OIC Instance"
+  instance_type:
+    type: string
+    title: "Instance Type"
+    default: STANDARDX
+    required: true
+    visible: true
+  domain_id:
+    type: string 
+    title: "Domain OCID"
+    required: true
+    visible: true
