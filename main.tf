@@ -41,7 +41,7 @@ resource "random_integer" "seq" {
 }
 
 resource "oci_integration_integration_instance" "test_integration_instance" {
-  # count = 2
+  count = 2
   #Required
   compartment_id            = var.compartment_id
   integration_instance_type = var.instance_type
